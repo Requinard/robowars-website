@@ -2,9 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
-
-
+    <title>Choose Your Flavour</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
 
 
@@ -105,7 +103,7 @@
             <button id="go3" class="btn btn-block btn-lg btn-primary">Go BLUE</button>
         </div>
     </div>
-    <div class="page" id="page2">
+    <div class="page" id="page2" style="background-color: red;">
         <div class="pure-g">
             <div class="pure-u-1">
                 <h1>Team RED</h1>
@@ -149,12 +147,14 @@
         $("#page2").addClass("pt-page-current pt-page-ontop");
         $("#page2").addClass("page-moveLeft");
         $("#page1").removeClass("pt-page-current pt-page-ontop");
+        document.title = "Go Team Red!";
     });
     $("#go3").click(function () {
         $("#page1").addClass("page-scaleDown");
         $("#page3").addClass("pt-page-current pt-page-ontop");
         $("#page3").addClass("page-moveRight");
         $("#page1").removeClass("pt-page-current pt-page-ontop");
+        document.title = "Go Team Blue!";
     });
 </script>
 </body>
