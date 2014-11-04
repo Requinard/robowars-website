@@ -5,50 +5,63 @@
     <meta charset="UTF-8">
     <title>Choose Your Flavour</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
-    <!--Geeft aan dat we een extern stylesheet gebruiken-->
+    <!--Geeft aan dat we een extern stylesheet gebruiken, deze word gebruikt zodat we pure css kunnen gebruiken. Mocht je hier meer over willen weten kun je dit opzoeken op purecss.io-->
     <link href='http://fonts.googleapis.com/css?family=Lato|Open+Sans' rel='stylesheet' type='text/css'>
+    <!--Geeft aan dat we externe fonts gebruiken van google fonts en waar die te vinden zijn zodat we ze kunnen toepassen-->
     <link rel="stylesheet" href="css/style.css">
+    <!--Verwijst naar onze eigen stylesheet voor onze css code-->
     
     <link rel="shortcut icon" href="assets/icon.ico">
 </head>
 <body>
-
+<!--Dit is de div voor alle pagina's hierin zitten pagina 1,2 en 3 oftewel de homepage en de twee paginas voor de teams-->
 <div class="perspective">
+    
+    <!--Dit is de div voor de eerste pagina oftewel de hoofdpagina-->
     <div class="page pt-page-current" id="page1">
+        
+        <!--de onderstaande code zorgt er allemaal voor dat het logo op het midden van het scherm verschijnt-->
         <div class="pure-g text-center">
 
             <div  class="pure-u-1 text-center">
                 <img id="page1Logo" src="assets/logo.png" />
             </div>
         </div>
+        
+        <!--Dit is de div voor de beide knoppen binnen te houden en zet deze ook in het midden van het scherm -->
        <div class="text-center">
+           
+           <!--Dit is de div voor de eerste knop aan deze zit een animatie verbonden(code staat onderaan) en gaat naar page3 -->
             <div class="pure-u-8-24 text-center">
                 <button id="go2" class="pure-button">
                     Go RED
                 </button>
             </div>
-
+            
+           <!--Dit is de div voor de tweede knop aan deze zit ook een animatie verbonden, en gaat naar page2 -->
             <div class="pure-u-11-24 text-center">
                 <button id="go3" class="pure-button">
                     Go BLUE
                 </button>
             </div>
         </div>
+    <!--Dit is het einde van page1 -->
     </div>
 
-
+    <!--Hier begint page2 (Dit is team Rood) -->
     <div class="page" id="page2" >
         
+        <!--Hier begint de div voor de navigatiebalk voor team rood dit bevat het logo en een knop naar page3 -->
         <div id="navTeamRed" class="pure-menu-horizontal">
 		  <ul>
               <li><a href="index.html"><img src="assets/logo.png" height="100" ></a></li>   
 			  		
-              <li style="float:right;"><button id="go4" class="pure-button">Switch Team</button></li> 
-<!--Used Style tag-->
+              <li class="floatRight"><button id="go4" class="pure-button">Switch Team</button></li> 
+
               
           </ul>
 		</div>
-		
+		<!--Hier begint de div voor de body van team rood, dit bevat de chat en de video van ons twitchkanaal geëmbed in de pagina-->
         <div id="bodyTeamRed">
             
                 <iframe src="http://www.twitch.tv/twitchplaysrobowars1/embed " frameborder="0" scrolling="no"
@@ -60,18 +73,19 @@
         
     </div>
 
-
+    <!--Hier begint page3 (Dit is team Blauw) -->
     <div class="page" id="page3">
         
+        <!--Dit begint de div voor de navigatiebalk voor team blauw dit bevat het logo en een knop naar page2 -->
         <div id="navTeamBlue" class="pure-menu-horizontal">
 		  <ul>
               <li><a href="index.html"><img src="assets/logo.png" height="100"></a></li>
               
-              <li style="float:right;"><button id="go5" class="pure-button">Switch Team</button></li> 
+              <li class="floatRight"><button id="go5" class="pure-button">Switch Team</button></li> 
                             
           </ul>
 		</div>
-		
+		<!--Hier begint de div voor de body van team rood, dit bevat de chat en de video van ons twitchkanaal geëmbed in de pagina-->
         <div id="bodyTeamBlue">
             
                 <iframe src="http://www.twitch.tv/twitchplaysrobowars2/chat?popout=" frameborder="0" scrolling="no"
@@ -85,9 +99,11 @@
 
 </div>
 
+<!--Hieronder staat de code voor de animaties die we hebben gebruikt.-->
 <script src="http://code.jquery.com/jquery-1.11.1.min.js "></script>
-
 <script>
+    //Dit is verbonden aan knop 2 oftewel de Go RED knop, Dit verandert de home pagina naar de pagina van team rood.
+    //Dit doet het, doormiddel van een animatie.
     $("#go2 ").click(function () {
         $("#page1 ").addClass("page-scaleDown ");
         $("#page2 ").addClass("pt-page-current pt-page-ontop ");
@@ -95,6 +111,8 @@
         $("#page1 ").removeClass("pt-page-current pt-page-ontop ");
         document.title = "Go Team Red! ";
     });
+    //Dit is verbonden aan knop 3 oftewel de Go BLUE knop, Dit verandert de home pagina naar de pagina van team rood.
+    //Dit doet het, doormiddel van een animatie.
     $("#go3 ").click(function () {
         $("#page1 ").addClass("page-scaleDown ");
         $("#page3 ").addClass("pt-page-current pt-page-ontop ");
@@ -102,19 +120,23 @@
         $("#page1 ").removeClass("pt-page-current pt-page-ontop ");
         document.title = "Go Team Blue! ";
     });
+    //Dit is verbonden aan knop 4 oftewel de switch team knop op de pagina van team Rood.
+    //Dit doet het, doormiddel van een animatie.
      $("#go4 ").click(function () {
         $("#page2 ").addClass("page-scaleDown ");
         $("#page3 ").addClass("pt-page-current pt-page-ontop ");
         $("#page3 ").addClass("page-moveLeft ");
         $("#page2 ").removeClass("pt-page-current pt-page-ontop ");
-        document.title = "Go Team Red! ";
+        document.title = "Go Team Blue! ";
     });
+    //Dit is verbonden aan knop 4 oftewel de switch team knop op de pagina van team Blauw.
+    //Dit doet het, doormiddel van een animatie.
     $("#go5 ").click(function () {
         $("#page3 ").addClass("page-scaleDown ");
         $("#page2 ").addClass("pt-page-current pt-page-ontop ");
         $("#page2 ").addClass("page-moveLeft ");
         $("#page3 ").removeClass("pt-page-current pt-page-ontop ");
-        document.title = "Go Team Blue! ";
+        document.title = "Go Team Red! ";
     });
 </script>
 </body>

@@ -80,6 +80,9 @@ html {
 .text-center {
     text-align: center;
 }
+.floatRight{
+    float:right;
+}
 #page1Logo{
     width:50%; 
     padding-top:10%;
@@ -93,10 +96,14 @@ html {
     background-color:#d63333;
     height:100%;
     width:100;
+    padding:0;
+    margin:0;
 }
 #page3{
     height:100%;
     width:100;
+    padding:0;
+    margin:0;
     background-color: #0f8Adb;
 }
 #go2{
