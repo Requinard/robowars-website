@@ -80,11 +80,74 @@ html {
 .text-center {
     text-align: center;
 }
+#page1Logo{
+    width:50%; 
+    padding-top:10%;
+}
+#page1{
+    background-color:#6441A5; 
+    height:100%; 
+    width:100%;
+}
 #page2{
+    background-color:#d63333;
     height:100%;
     width:100;
 }
 #page3{
     height:100%;
     width:100;
+    background-color: #0f8Adb;
+}
+#go2{
+    background-color: #d63333; 
+    color:#f0f0f0; 
+    width:400;
+    height:100;
+    font-size:300%; 
+    border-radius: 10px;
+}
+#go3{
+    background-color: #0000A5;
+    color:#f0f0f0; 
+    width:400;
+    height:100;
+    font-size:300%; 
+    border-radius: 10px;
+}
+#navTeamRed{
+    height:10%;
+    width:100%;
+}
+#bodyTeamRed{
+    height:100%; 
+    width:100%; 
+    padding:0; 
+    margin:0;
+}
+#navTeamBlue{
+    height:10%;
+    width:100%;
+}
+#bodyTeamBlue{
+    height:100%;
+    width:100%;
+    padding:0;
+    margin:0;
+}
+#go4{
+    background-color: transparent;
+    color: White;
+    font-size: 22px;
+    margin-top: 10px;
+    margin-right: 30px;
+    border: 3px solid #ffffff;
+}
+#go5{
+    background-color: transparent;
+    color: White;
+    font-size: 22px;
+    margin-top: 10px;
+    margin-right: 30px;
+    border: 3px solid #ffffff;
 }

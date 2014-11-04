@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Choose Your Flavour</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <!--Geeft aan dat we een extern stylesheet gebruiken-->
     <link href='http://fonts.googleapis.com/css?family=Lato|Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
     
@@ -13,73 +14,72 @@
 <body>
 
 <div class="perspective">
-    <div class="page pt-page-current" id="page1" style="background-color:#6441A5; height:100%; width:100%;">
+    <div class="page pt-page-current" id="page1">
         <div class="pure-g text-center">
 
-            <div class="pure-u-1 text-center">
-                <img src="assets/logo.png" style="width:50%; padding-top:10%;"/>
+            <div  class="pure-u-1 text-center">
+                <img id="page1Logo" src="assets/logo.png" />
             </div>
         </div>
-        <div class="pure-u-2-24"><p style="color: transparent;">test</p></div>
-        <div class="pure-u-8-24 text-center">
-            <button id="go2" class="pure-button"
-                    style="background-color: #d63333; color:#f0f0f0; width:400;height:100;font-size:300%; border-radius: 10px;">
-                Go RED
-            </button>
-        </div>
-        <div class="pure-u-2-24"><p style="color: transparent;">test</p></div>
-        <div class="pure-u-11-24 text-center">
-            <button id="go3" class="pure-button"
-                    style="background-color: #0000A5;color:#f0f0f0; width:400;height:100;font-size:300%; border-radius: 10px;">
-                Go BLUE
-            </button>
+       <div class="text-center">
+            <div class="pure-u-8-24 text-center">
+                <button id="go2" class="pure-button">
+                    Go RED
+                </button>
+            </div>
+
+            <div class="pure-u-11-24 text-center">
+                <button id="go3" class="pure-button">
+                    Go BLUE
+                </button>
+            </div>
         </div>
     </div>
 
 
-    <div class="page" id="page2" style="background-color: #d63333;">
+    <div class="page" id="page2" >
         
-        <div id="navTeamRed" style="height:10%; width:100%;">
-		  <ul style="padding:0; margin:0; list-style-type:none;">
+        <div id="navTeamRed" class="pure-menu-horizontal">
+		  <ul>
               <li><a href="index.html"><img src="assets/logo.png" height="100" ></a></li>   
-<!--
-              <li><h1>Team Red</h1></li>
-              <li><button>Switch Team</button></li> 
--->
+			  		
+              <li style="float:right;"><button id="go4" class="pure-button">Switch Team</button></li> 
+<!--Used Style tag-->
               
           </ul>
 		</div>
 		
-        <div id="bodyTeamRed" style="height:100%; width:100%; padding:0; margin:0;">
+        <div id="bodyTeamRed">
             
                 <iframe src="http://www.twitch.tv/twitchplaysrobowars1/embed " frameborder="0" scrolling="no"
                         height="90%" width="74.8%"></iframe>
             
                 <iframe src="http://www.twitch.tv/twitchplaysrobowars1/chat?popout=" frameborder="0" scrolling="no"
                         height="90%" width="25%"></iframe>
-<!--            for some fucked up reason the width isn't 100%-->
 		</div>
         
     </div>
 
 
-    <div class="page" id="page3" style="background-color: #0f8Adb;">
+    <div class="page" id="page3">
         
-        <div id="navTeamBlue" style="height:10%; width:100%;">
-		  <ul style="padding:0; margin:0; list-style-type:none;">
-              <li><a href="index.html"><img src="assets/logo.png" height="100" ></a></li>   
+        <div id="navTeamBlue" class="pure-menu-horizontal">
+		  <ul>
+              <li><a href="index.html"><img src="assets/logo.png" height="100"></a></li>
+              
+              <li style="float:right;"><button id="go5" class="pure-button">Switch Team</button></li> 
                             
           </ul>
 		</div>
 		
-        <div id="bodyTeamBlue" style="height:100%; width:100%; padding:0; margin:0;">
+        <div id="bodyTeamBlue">
             
                 <iframe src="http://www.twitch.tv/twitchplaysrobowars2/chat?popout=" frameborder="0" scrolling="no"
                         height="90%" width="25%"></iframe>
             
                 <iframe src="http://www.twitch.tv/twitchplaysrobowars2/embed " frameborder="0" scrolling="no"
                         height="90%" width="74.8%"></iframe>
-<!--            for some fucked up reason the width isn't 100%-->
+
 		</div>
     </div>
 
@@ -100,6 +100,20 @@
         $("#page3 ").addClass("pt-page-current pt-page-ontop ");
         $("#page3 ").addClass("page-moveRight ");
         $("#page1 ").removeClass("pt-page-current pt-page-ontop ");
+        document.title = "Go Team Blue! ";
+    });
+     $("#go4 ").click(function () {
+        $("#page2 ").addClass("page-scaleDown ");
+        $("#page3 ").addClass("pt-page-current pt-page-ontop ");
+        $("#page3 ").addClass("page-moveLeft ");
+        $("#page2 ").removeClass("pt-page-current pt-page-ontop ");
+        document.title = "Go Team Red! ";
+    });
+    $("#go5 ").click(function () {
+        $("#page3 ").addClass("page-scaleDown ");
+        $("#page2 ").addClass("pt-page-current pt-page-ontop ");
+        $("#page2 ").addClass("page-moveLeft ");
+        $("#page3 ").removeClass("pt-page-current pt-page-ontop ");
         document.title = "Go Team Blue! ";
     });
 </script>
